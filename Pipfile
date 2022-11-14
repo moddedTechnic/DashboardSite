@@ -1,0 +1,17 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+django-sass-processor = "*"
+libsass = "*"
+django-compressor = "*"
+fontawesomefree = "*"
+pipe = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"

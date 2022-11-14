@@ -1,0 +1,29 @@
+{% load static sass_tags %}
+
+<link href="{% sass_src 'sass/includes/header.scss' %}" rel="stylesheet" type="text/css" />
+
+<header id="top">
+    <a href="/">
+        <img class="logo" src="{% static 'img/logo-64x64.webp' %}" alt="" />
+    </a>
+
+    <a class="title" href="/">Dashboard</a>
+
+    <nav>
+        <ul>
+            {% for app in apps %}
+                <li class="{% if current_app == app.base_path %} active {% endif %}">
+                    <a href="/{{ app.base_path }}">{{ app.verbose_name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+
+    <ul class="actions">
+        <li>
+            <div class="settings">
+                <a href="/admin"><i class="fa-solid fa-gear"></i></a>
+            </div>
+        </li>
+    </ul>
+</header>

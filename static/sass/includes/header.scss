@@ -1,0 +1,70 @@
+@import "variables";
+
+header {
+	display: grid;
+	grid-template-columns: auto 1fr 2fr 1fr;
+
+	width: 100vw;
+
+	background: $bg-clr-300;
+
+	img.logo {
+		height: 100%;
+
+		transition: rotate 500ms ease-in-out;
+
+		&:hover {
+			rotate: 180deg;
+		}
+	}
+
+	.title {
+		width: 100%;
+		place-self: center;
+		text-align: center;
+		font-size: $title-font-size;
+
+		transition: scale 250ms ease-in-out;
+
+		&:hover {
+			scale: 112.5%;
+		}
+	}
+
+	a {
+		color: currentColor;
+		text-decoration: none;
+	}
+
+	ul {
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+
+		margin: 0;
+		padding: 0;
+		height: 100%;
+
+		li {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			padding-inline: $size-700;
+			height: 100%;
+
+			font-size: $size-500;
+			list-style: none;
+
+			transition: background-color 250ms ease-in-out;
+
+			&.active {
+				background-color: $bg-clr-600;
+			}
+
+			&:hover {
+				background-color: $bg-clr-700;
+			}
+		}
+	}
+}

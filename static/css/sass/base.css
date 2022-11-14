@@ -1,0 +1,26 @@
+html {
+  color: #e7f2ff;
+  background-color: #282c34;
+  scroll-behavior: smooth; }
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh; }
+  body > main {
+    flex-grow: 999; }
+
+main {
+  padding-block: 4.209rem;
+  width: 80vw; }
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: space-evenly; }
+  .row > * {
+    display: block; }
+
+/*# sourceMappingURL=base.css.map */

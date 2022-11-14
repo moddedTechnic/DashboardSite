@@ -1,0 +1,62 @@
+@import "variables";
+
+.transaction-history {
+	border-collapse: collapse;
+
+	thead {
+		background-color: $bg-clr-300;
+
+		td {
+			padding-block: $size-200;
+		}
+	}
+
+	td {
+		padding-inline: $size-300;
+	}
+
+	tbody {
+		td {
+			padding-block: $size-100;
+		}
+
+		tr:nth-child(2n) td {
+			background-color: $bg-clr-800;
+		}
+
+		tr:hover td {
+			background-color: $bg-clr-900;
+		}
+	}
+
+	.transaction {
+		.direction {
+			i {
+				padding-right: $size-300;
+			}
+
+			&.in {
+				color: #61b44a;
+			}
+
+			&.out {
+				color: #f64f47;
+			}
+		}
+
+		.amount {
+			span {
+				display: flex;
+				justify-content: space-between;
+			}
+
+			font-family: monospace;
+		}
+	}
+}
+
+#analytics-history {
+	.graph {
+		width: 30vw;
+	}
+}

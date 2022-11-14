@@ -1,0 +1,25 @@
+{% load static sass_tags %}
+
+<link href="{% sass_src 'sass/includes/footer.scss' %}" rel="stylesheet" type="text/css" />
+
+<footer>
+    <div class="column">
+        <ul>
+            <li class="title">Apps</li>
+            {% for app in apps %}
+                <li><a href="/{{ app.base_path }}">{{ app.verbose_name }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="column">
+        <ul>
+            <li class="title">Tools</li>
+        </ul>
+    </div>
+    <div class="column">
+        <ul>
+            <li class="title">Links</li>
+            <li><a href="#top"><i class="fa-solid fa-arrow-up"></i> Top</a></li>
+        </ul>
+    </div>
+</footer>

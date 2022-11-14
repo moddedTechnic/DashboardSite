@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block contents %}
+    <h1>Hello world!</h1>
+
+    <h2>Current app</h2>
+    <pre>{{ current_app }}</pre>
+
+    <h2>Installed apps</h2>
+    <ul>
+        {% for app in apps %}
+            <li>{{ app.verbose_name }}</li>
+        {% endfor %}
+    </ul>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum non pretium urna, eu dapibus ante. Fusce vitae dignissim mauris, ut eleifend nisi. Pellentesque nec mollis nunc. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque malesuada dui non enim vestibulum varius. Praesent rutrum magna vitae metus bibendum bibendum. Duis ante justo, placerat vel nisi sed, lobortis vehicula mauris. Cras pretium fermentum sapien, sed euismod ex laoreet eget. Suspendisse accumsan fringilla dui. Curabitur eleifend est eget justo malesuada mollis. Aenean pellentesque ante in pretium scelerisque.</p>
+
+    <p>Suspendisse ligula turpis, consequat id facilisis feugiat, mollis eget nunc. Etiam aliquet nibh id dolor pulvinar, at posuere lorem porttitor. In congue consequat turpis, ut sagittis felis ultricies eget. Vestibulum eget enim sagittis, sollicitudin nunc eu, consequat dolor. Vivamus finibus quam a odio maximus, et cursus magna porttitor. Nam ac nibh eu felis viverra faucibus. Proin vitae orci viverra, laoreet nisi ac, ultrices diam. Praesent eu lorem a nunc mollis lacinia ut vel diam. Etiam pretium tristique neque, pretium dictum ante viverra sed. Vestibulum scelerisque aliquam pharetra. In quis leo congue, aliquet lacus pretium, pulvinar ante.</p>
+
+    <p>Mauris eleifend bibendum nulla, ut gravida ante viverra non. Quisque ex augue, dignissim quis diam et, ultrices imperdiet massa. Nam vel turpis vel urna scelerisque congue mattis ac est. In porttitor nibh ut lorem rhoncus molestie. Vestibulum vitae felis bibendum, molestie risus vel, venenatis elit. Donec eget aliquam nisi. Ut sagittis augue vitae lorem tristique accumsan. Suspendisse auctor lectus urna, a porta elit mollis at. Fusce scelerisque enim eu odio volutpat, pulvinar pretium ipsum dapibus. Praesent eu blandit lectus. Pellentesque mi sem, pellentesque eget purus quis, maximus pellentesque libero. Aenean eget convallis velit.</p>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum libero ipsum, convallis varius augue aliquam accumsan. Sed vitae erat vitae purus auctor suscipit. Vivamus ut sapien sed nibh tempus viverra. Sed non tellus at lectus tempus vulputate. Vestibulum iaculis, lacus et venenatis tincidunt, urna dui lacinia est, sit amet sagittis lacus lacus a nulla. Integer sollicitudin enim nunc, ac condimentum nibh auctor sit amet.</p>
+
+    <p>Vestibulum at velit nec nisl volutpat congue non a nisl. Aenean in feugiat lorem. Pellentesque condimentum, nibh et finibus semper, mi dolor accumsan mauris, et cursus nunc lacus in neque. Nulla auctor, massa nec dictum aliquet, erat nunc molestie nulla, sit amet placerat leo enim ac nunc. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam a nulla neque. Phasellus vulputate dolor leo, eu posuere nibh posuere a. Donec sit amet nisl lorem. Fusce justo metus, rutrum vel consequat vitae, malesuada eu orci. Sed ac vestibulum nulla, vel euismod turpis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut urna massa, pellentesque id ante quis, lacinia luctus augue. Etiam eget vulputate nulla.</p>
+
+    <p>Curabitur vulputate sed dolor id molestie. Ut mi nunc, tincidunt at libero quis, tristique pharetra erat. Donec facilisis, leo quis pretium pretium, lacus risus tincidunt lectus, a efficitur eros lectus at ipsum. Nulla ac ante gravida, convallis nisl vel, tincidunt nunc. Vivamus bibendum tortor quis gravida mollis. Vestibulum at tellus maximus, vestibulum risus et, pretium elit. Nulla laoreet enim a augue venenatis, ultrices facilisis diam pharetra. Aliquam interdum in turpis et feugiat. Nullam nec tempus risus. Duis nibh velit, mollis et elit vitae, congue varius risus. Sed bibendum convallis tortor vitae pellentesque. Phasellus ornare condimentum nisl id pharetra. Quisque eu risus sit amet lectus faucibus imperdiet. Suspendisse eu consequat ipsum. Integer justo risus, vestibulum eget felis vel, porttitor aliquet lacus. Pellentesque finibus, leo in ultricies iaculis, felis ligula gravida enim, sodales aliquam enim urna ac ipsum.</p>
+
+    <p>Cras odio magna, finibus vitae nisi ut, rutrum sagittis risus. Cras semper sem nec posuere semper. Aliquam eget nisi varius dolor laoreet aliquet id sed neque. Nullam pellentesque felis orci, quis consequat lacus ultrices in. Ut elementum mi vitae pharetra eleifend. Aliquam sodales sollicitudin ante at scelerisque. Suspendisse quis risus turpis. Praesent blandit facilisis tortor, ut accumsan elit aliquet a. Mauris vestibulum gravida suscipit. Donec vitae sollicitudin turpis, non porta urna. Sed molestie congue nisl in lobortis. Morbi vitae ipsum ut ex tempus pretium. Pellentesque convallis justo id mauris lacinia, sed tempus dui malesuada. Donec ipsum dolor, tincidunt eget tempus vitae, dignissim quis est. Praesent tempor erat non magna cursus, a aliquet purus commodo. Donec consequat libero ac porttitor sodales.</p>
+
+    <p>Donec scelerisque metus eu turpis fringilla, et accumsan velit euismod. Suspendisse at sem et nunc convallis fermentum nec eget leo. Cras ornare, enim at sodales egestas, lacus metus accumsan nisi, eu congue sapien nulla quis nisi. Integer in diam ut urna rutrum ornare eu non nisl. Aliquam finibus venenatis enim, aliquam dignissim odio imperdiet a. Integer lacinia dui augue, nec porta dui molestie ac. Suspendisse convallis metus vel risus consequat, quis porttitor sem tempus.</p>
+
+    <p>Nunc vel diam vel tellus dictum volutpat non in eros. Maecenas ut arcu purus. Praesent nibh ex, finibus at faucibus at, commodo a elit. Nunc tincidunt massa sapien, id egestas augue semper sit amet. Donec non mi odio. Mauris nec nibh in lacus ullamcorper commodo. Pellentesque non malesuada nisi. Curabitur justo mi, blandit vitae metus at, semper vehicula nulla. Maecenas non metus non felis placerat sodales. Ut cursus mauris sit amet posuere varius.</p>
+
+    <p>Aenean eleifend dolor massa, eget gravida risus eleifend et. Donec sed augue a ipsum tincidunt dapibus a eget nibh. Fusce viverra lacus eget ligula pellentesque accumsan. Etiam dignissim neque at magna dictum semper. In mauris felis, facilisis pharetra feugiat ac, auctor et tellus. Vivamus consectetur finibus libero. Ut nec turpis dolor. Sed finibus consequat dignissim. Aenean ac ornare ipsum. Aliquam erat volutpat. Morbi tincidunt nec eros et varius. Donec consectetur libero nec mauris fringilla, vitae mollis nunc ultrices.</p>
+{% endblock contents %}

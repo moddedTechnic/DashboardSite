@@ -1,0 +1,43 @@
+header {
+  display: grid;
+  grid-template-columns: auto 1fr 2fr 1fr;
+  width: 100vw;
+  background: #21252b; }
+  header img.logo {
+    height: 100%;
+    transition: rotate 500ms ease-in-out; }
+    header img.logo:hover {
+      rotate: 180deg; }
+  header .title {
+    width: 100%;
+    place-self: center;
+    text-align: center;
+    font-size: 2.369rem;
+    transition: scale 250ms ease-in-out; }
+    header .title:hover {
+      scale: 112.5%; }
+  header a {
+    color: currentColor;
+    text-decoration: none; }
+  header ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 0;
+    height: 100%; }
+    header ul li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-inline: 2.369rem;
+      height: 100%;
+      font-size: 1.333rem;
+      list-style: none;
+      transition: background-color 250ms ease-in-out; }
+      header ul li.active {
+        background-color: #1c2225; }
+      header ul li:hover {
+        background-color: #111315; }
+
+/*# sourceMappingURL=header.css.map */

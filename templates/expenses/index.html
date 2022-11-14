@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% load graphs static sass_tags %}
+
+
+{% block contents %}
+    <link href="{% sass_src 'sass/expenses/index.scss' %}" rel="stylesheet" type="text/css" />
+    {% chart_init %}
+
+    <h1>Expenses</h1>
+
+    <section id="summary">
+        <h2>Summary</h2>
+
+        <p>Balance: <span>{{ balance }} / {{ real_balance }}</span></p>
+
+        {% if amortisations %}
+            <h3>Amortisations</h3>
+            <ul>
+                {% for amortisation in amortisations %}
+                    <li>{{ amortisation.name }}: {{ amortisation.progress }} / {{ amortisation.target }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </section>
+
+    <section id="transaction-history">
+        <h2>Transaction History</h2>
+
+        <table class="transaction-history">
+            <thead>
+                <tr>
+                    <td>Direction</td>
+                    <td>Amount</td>
+                    <td>Method</td>
+                    <td>Category</td>
+                    <td>Date</td>
+                    <td>Participant</td>
+                    <td>Amortisation</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for transaction in transactions %}
+                    <tr class="transaction">
+                        {% if transaction.direction == 'I' %}
+                            <td class="direction in"><i class="fa-solid fa-arrow-up"></i> In</td>
+                        {% else %}
+                            <td class="direction out"><i class="fa-solid fa-arrow-down"></i> Out</td>
+                        {% endif %}
+                        <td class="amount"><span>£ <span>{{ transaction.get_amount }}</span></span></td>
+                        <td>{{ transaction.get_method_display }}</td>
+                        <td>{{ transaction.get_category_display }}</td>
+                        <td>{{ transaction.date }}</td>
+                        {% if transaction.participant %}
+                            <td>{{ transaction.participant }}</td>
+                        {% else %}
+                            <td></td>
+                        {% endif %}
+                        <td>{{ transaction.get_amortisation_name }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+
+    <section id="analytics">
+        <h2>Analytics</h2>
+
+        <section id="analytics-history">
+            <script src="{% static 'scripts/expenses/index.js' %}"></script>
+
+            <h3>Last 30 days</h3>
+            <div class="row">
+                {% pie_chart 'analytics-history-income-30-days' 'Income' '/expenses/data/income?window=30' 'prepare_data' 'make_currency_label' %}
+                {% pie_chart 'analytics-history-expenditure-30-days' 'Expenditure' '/expenses/data/expenditure?window=30' 'prepare_data' 'make_currency_label' %}
+            </div>
+
+            <h3>History</h3>
+            <div class="row">
+                {% pie_chart 'analytics-history-income' 'Income' '/expenses/data/income' 'prepare_data' 'make_currency_label' %}
+                {% pie_chart 'analytics-history-expenditure' 'Expenditure' '/expenses/data/expenditure' 'prepare_data' 'make_currency_label' %}
+            </div>
+        </section>
+    </section>
+{% endblock contents %}
